@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+// routes
+import Router from './routes';
+// theme
+import ThemeConfig from './theme';
 
-function App() {
+import { getAccessToken, getSessionDetails } from 'utils/localStorage';
+import { setSessionDetails } from './actions/session';
+import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// ----------------------------------------------------------------------
+
+export default function App() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const session = useSelector((state) => state.session);
+
+  useEffect(() => {
+    if (session.isAuthenticated) {
+      navigate('/home');
+    }
+  }, [session]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeConfig>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router />
+      </Suspense>
+      <ToastContainer />
+    </ThemeConfig>
   );
 }
-
-export default App;

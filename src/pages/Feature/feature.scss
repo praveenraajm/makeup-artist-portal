@@ -1,0 +1,13 @@
+.section {
+    &-container {
+        margin: 8px;
+        margin-bottom: 16px;
+        width: 800px;
+    }
+
+    &-children {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}

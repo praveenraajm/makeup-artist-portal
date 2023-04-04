@@ -1,0 +1,14 @@
+.form-group {
+  margin-bottom: 15px;
+
+  .MuiTextField-root {
+    label {
+      margin-top: -5px;
+    }
+  }
+
+  input {
+    padding: 0 14px;
+    height: 40px;
+  }
+}
