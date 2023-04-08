@@ -1,43 +1,32 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Container, PageHeader } from "components";
-import { getUsers } from "actions/user";
-import "./home.scss";
+import { Box, Button, Typography } from "@mui/material";
+import { homeBoxStyles, homeHeaderStyles } from "./homeStyles";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  // useEffect(() => {
-  //     dispatch(getUsers());
-  // }, [dispatch]);
-
-  // const users = useSelector(state => state.user.users);
-
   return (
-    <div className="home">
-      <Container>
-        <PageHeader title="Home" />
-        <div className="list">
-          {/* {users.map((user, i) => (
-            <div key={i} className="list-item">
-              <div>{user.id}</div>
-              <div>
-                {user.first_name} {user.last_name}
-              </div>
-              <div>{user.email}</div>
-              <div>
-                <img
-                  className="avatar"
-                  src={user.avatar}
-                  width="50"
-                  height="50"
-                />
-              </div>
-            </div>
-          ))} */}
-        </div>
-      </Container>
-    </div>
+    <Box sx={homeHeaderStyles}>
+      <Box sx={homeBoxStyles}>
+        <Typography variant="h2" paragraph sx={{ color: "#fff" }}>
+          Charm Makeover
+        </Typography>
+        <Typography variant="body1" paragraph sx={{ color: "#fff" }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+          maximus imperdiet mauris, at blandit purus molestie vel. Nam semper
+          luctus felis. Cras ut lectus ac dolor consectetur venenatis at ut
+          tortor. Fusce tempor, lectus ac luctus blandit, risus nisi eleifend
+          purus, eget feugiat nulla quam at elit. Morbi rutrum euismod sem, eu
+          lobortis urna feugiat a. In hac habitasse platea dictumst. Duis
+          ultrices sed ante vel auctor. Nam vulputate leo libero, efficitur
+          tincidunt velit porttitor posuere. Duis in consectetur diam. In odio
+          tellus, dapibus nec dolor vestibulum, congue auctor lacus.
+        </Typography>
+        <Button
+          variant="contained"
+          sx={{ color: "#fff", backgroundColor: "#7d5851" }}
+        >
+          About Us
+        </Button>
+      </Box>
+    </Box>
   );
 };
-
 export default Home;
