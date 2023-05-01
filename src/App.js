@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NavBar from "pages/NavBar/NavBar";
+import MainGrid from "pages/Home/MainGrid";
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +20,8 @@ export default function App() {
   return (
     <ThemeConfig>
       {/* <Router /> */}
-      <NavBar />
+      {/* <NavBar /> */}
+      <MainGrid />
       <ToastContainer />
     </ThemeConfig>
   );

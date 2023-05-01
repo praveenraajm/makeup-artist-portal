@@ -16,7 +16,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="h3" paragraph>
-            INSTAGRAM
+            Follow
           </Typography>
         </Box>
       </Box>

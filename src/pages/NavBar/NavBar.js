@@ -5,7 +5,11 @@ import background from "../../assets/bridal_trim_landscape.jpg";
 import Home from "pages/Home/Home";
 import MakeOverTypes from "pages/MakeOverTypes/MakeOverTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFaceAngry,
+  faFaceFlushed,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import Portfolio from "pages/Portfolio/Portfolio";
 import Footer from "pages/Footer/Footer";
 
@@ -27,10 +31,10 @@ const NavBar = (props) => {
       label: "Contacts",
     },
     {
-      icon: <FontAwesomeIcon icon={faPlus} />,
+      icon: <FontAwesomeIcon icon={faFaceAngry} />,
     },
     {
-      icon: <FontAwesomeIcon icon={faPlus} />,
+      icon: <FontAwesomeIcon icon={faFaceFlushed} />,
     },
   ];
 
@@ -50,7 +54,9 @@ const NavBar = (props) => {
           position: "relative",
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "center", minHeight: 100 }}>
+        <Box
+          sx={{ display: "flex", justifyContent: "flex-start", minHeight: 100 }}
+        >
           {navItems.map((item) => (
             <Button
               key={item}
@@ -60,16 +66,12 @@ const NavBar = (props) => {
                 fontSize: "14px",
               }}
             >
-              {item?.label?.toUpperCase()}
+              {item?.label}
               {item?.icon}
             </Button>
           ))}
         </Box>
-        <Home />
       </Box>
-      <MakeOverTypes />
-      <Portfolio />
-      <Footer />
     </Box>
   );
 };

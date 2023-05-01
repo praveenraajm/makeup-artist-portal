@@ -7,7 +7,7 @@ const MakeOverTypes = () => {
         sx={{
           width: "75%",
           margin: "0 auto",
-          height: "200px",
+          height: "300px",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
