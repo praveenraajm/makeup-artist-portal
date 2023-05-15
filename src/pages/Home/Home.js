@@ -32,6 +32,7 @@ const Home = () => {
             width: "60%",
             borderRadius: "100px",
             padding: "8px 16px",
+            marginBottom: "16px",
           }}
         >
           ABOUT US

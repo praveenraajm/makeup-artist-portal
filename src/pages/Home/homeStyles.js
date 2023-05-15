@@ -1,5 +1,5 @@
 export const homeHeaderStyles = () => {
   return {
-    marginTop: "200px",
+    marginTop: "250px",
   };
 };

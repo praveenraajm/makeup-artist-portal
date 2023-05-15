@@ -50,7 +50,6 @@ const NavBar = (props) => {
         sx={{
           display: "block",
           justifyContent: "space-around",
-          backgroundImage: `url(${background})`,
           objectFit: "contain",
           backgroundPosition: "top",
           height: "1000px",
@@ -78,6 +77,11 @@ const NavBar = (props) => {
             </Button>
           ))}
         </Box>
+        <img
+          src={background}
+          alt="make-over"
+          style={{ position: "absolute", top: "0", bottom: "0" }}
+        ></img>
       </Box>
     </Box>
   );
