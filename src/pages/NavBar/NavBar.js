@@ -12,8 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Portfolio from "pages/Portfolio/Portfolio";
 import Footer from "pages/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
+  let navigate = useNavigate();
   const navItems = [
     {
       label: "Home",
@@ -37,6 +39,10 @@ const NavBar = (props) => {
       icon: <FontAwesomeIcon icon={faFaceFlushed} />,
     },
   ];
+
+  const setRoute = (item) => {
+    navigate("/");
+  };
 
   return (
     <Box>
@@ -65,6 +71,7 @@ const NavBar = (props) => {
                 fontWeight: 600,
                 fontSize: "14px",
               }}
+              // onClick={(item) => setRoute()}
             >
               {item?.label}
               {item?.icon}

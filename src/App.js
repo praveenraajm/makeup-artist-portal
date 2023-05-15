@@ -19,9 +19,9 @@ export default function App() {
 
   return (
     <ThemeConfig>
-      {/* <Router /> */}
+      <Router />
       {/* <NavBar /> */}
-      <MainGrid />
+      {/* <MainGrid /> */}
       <ToastContainer />
     </ThemeConfig>
   );
