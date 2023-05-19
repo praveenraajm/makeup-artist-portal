@@ -19,7 +19,7 @@ const MakeOverTypes = () => {
         </Typography>
         <Button
           variant="text"
-          sx={{ color: "#fff" }}
+          sx={{ color: "#fff", fontSize: "16px" }}
           disableElevation
           disableRipple
         >

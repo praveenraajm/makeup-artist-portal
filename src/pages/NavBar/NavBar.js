@@ -1,87 +1,70 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import background from "../../assets/bridal_trim_landscape.jpg";
-import Home from "pages/Home/Home";
-import MakeOverTypes from "pages/MakeOverTypes/MakeOverTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFaceAngry,
-  faFaceFlushed,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import Portfolio from "pages/Portfolio/Portfolio";
-import Footer from "pages/Footer/Footer";
-import { useNavigate } from "react-router-dom";
+import { faFaceAngry, faFaceFlushed } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "@mui/material";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const NavBar = (props) => {
-  let navigate = useNavigate();
   const navItems = [
     {
       label: "Home",
+      to: "/",
     },
     {
       label: "About",
+      to: "#/about",
     },
     {
       label: "Portfolio",
+      to: "#/portfolio",
     },
     {
       label: "Classes",
+      to: "#/classes",
     },
     {
       label: "Contacts",
+      to: "#/contacts",
     },
     {
-      icon: <FontAwesomeIcon icon={faFaceAngry} />,
+      icon: <FontAwesomeIcon icon={faFacebook} size="lg" />,
+      to: "https://facebook.com",
     },
     {
-      icon: <FontAwesomeIcon icon={faFaceFlushed} />,
+      icon: <FontAwesomeIcon icon={faInstagram} size="lg" />,
+      to: "https://instagram.com",
     },
   ];
-
-  const setRoute = (item) => {
-    navigate("/");
-  };
 
   return (
     <Box>
       <Box
         sx={{
-          display: "block",
-          justifyContent: "space-around",
-          objectFit: "contain",
-          backgroundPosition: "top",
-          height: "1000px",
-          width: "100%",
-          flexWrap: "wrap",
-          flexDirection: "column",
-          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          minHeight: 50,
+          backgroundColor: "#4a1e1ee0",
         }}
       >
-        <Box
-          sx={{ display: "flex", justifyContent: "flex-start", minHeight: 100 }}
-        >
-          {navItems.map((item) => (
-            <Button
-              key={item}
-              sx={{
-                color: "#fff",
-                fontWeight: 600,
-                fontSize: "14px",
-              }}
-              // onClick={(item) => setRoute()}
-            >
-              {item?.label}
-              {item?.icon}
-            </Button>
-          ))}
-        </Box>
-        <img
-          src={background}
-          alt="make-over"
-          style={{ position: "absolute", top: "0", bottom: "0" }}
-        ></img>
+        {navItems.map((item) => (
+          <Link
+            key={item}
+            sx={{
+              color: "#fff",
+              fontWeight: 600,
+              fontSize: "14px",
+              padding: "16px 18px",
+              cursor: "pointer",
+            }}
+            underline="none"
+            onClick={() => console.log("clicked")}
+            href={item?.to}
+          >
+            {item?.label}
+            {item?.icon}
+          </Link>
+        ))}
       </Box>
     </Box>
   );

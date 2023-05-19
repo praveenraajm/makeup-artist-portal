@@ -1,32 +1,25 @@
-import { Class } from "@mui/icons-material";
 import { Suspense, lazy } from "react";
-import { Navigate, Route, Routes, useRoutes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-const MainGrid = lazy(() =>
-  import(/* webpackChunkName: "MainGrid" */ "pages/Home/MainGrid")
+const AppBar = lazy(() =>
+  import(/* webpackChunkName: "AppBar" */ "pages/Home/AppBar")
 );
-const NavBar = lazy(() =>
-  import(/* webpackChunkName: "NavBar" */ "pages/NavBar/NavBar")
-);
-const About = lazy(() =>
-  import(/* webpackChunkName: "About" */ "pages/About/About")
-);
+const About = lazy(() => import(/* webpackChunkName: "About" */ "pages/About"));
 const Portfolio = lazy(() =>
-  import(/* webpackChunkName: "Portfolio" */ "pages/Portfolio/Portfolio")
+  import(/* webpackChunkName: "Portfolio" */ "pages/Portfolio")
 );
 const Classes = lazy(() =>
-  import(/* webpackChunkName: "Classes" */ "pages/Classes/Classes")
+  import(/* webpackChunkName: "Classes" */ "pages/Classes")
 );
 const Contacts = lazy(() =>
-  import(/* webpackChunkName: "Contacts" */ "pages/Contacts/Contacts")
+  import(/* webpackChunkName: "Contacts" */ "pages/Contacts")
 );
 
 export default function Router() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" exact Component={MainGrid} />
-        {/* <Route path="/navBar" exact Component={NavBar} /> */}
+        <Route path="/" exact Component={AppBar} />
         <Route path="/about" exact Component={About} />
         <Route path="/portfolio" exact Component={Portfolio} />
         <Route path="/classes" exact Component={Classes} />

@@ -1,13 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 import { homeBoxStyles, homeHeaderStyles } from "./homeStyles";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Box sx={homeHeaderStyles}>
-      <Typography variant="h2" paragraph /* sx={{ color: "#fff" }} */>
+      <Typography variant="h2" paragraph>
         Charm Makeover
       </Typography>
-      <Typography variant="body1" paragraph /* sx={{ color: "#fff" }} */>
+      <Typography variant="body1" paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
         maximus imperdiet mauris, at blandit purus molestie vel. Nam semper
         luctus felis. Cras ut lectus ac dolor consectetur venenatis at ut
@@ -22,7 +24,7 @@ const Home = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "64px",
+          marginTop: "16px",
         }}
       >
         <Button
@@ -33,6 +35,12 @@ const Home = () => {
             borderRadius: "100px",
             padding: "8px 16px",
             marginBottom: "16px",
+            "&:hover": {
+              backgroundColor: "#7d5851c2",
+            },
+          }}
+          onClick={() => {
+            navigate("/about");
           }}
         >
           ABOUT US
