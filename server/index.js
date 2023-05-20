@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 const connection = require("./db");
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 let gfs;
 connection();
@@ -16,6 +19,16 @@ conn.once("open", function () {
 });
 
 app.use("/file", upload);
+
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 // media routes
 app.get("/file", async (req, res) => {
@@ -32,8 +45,10 @@ app.get("/file/:filename", async (req, res) => {
     const file = await gfs.files.findOne({ filename: req.params.filename });
     const readStream = gfs.createReadStream(file.filename);
     readStream.pipe(res);
+    console.log(res);
+    res.send(readStream);
   } catch (error) {
-    res.send("not found");
+    res.send("No file found");
   }
 });
 

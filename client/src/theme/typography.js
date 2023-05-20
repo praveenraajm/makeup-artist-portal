@@ -18,7 +18,7 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = "Nanum Gothic, sans-serif";
+const FONT_PRIMARY = "Nunito Sans, sans-serif";
 
 const typography = {
   fontFamily: FONT_PRIMARY,

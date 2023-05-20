@@ -1,7 +1,18 @@
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
+import { getFineArtGallery } from "actions/portfolioGallery";
 import Footer from "pages/Footer/Footer";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const FineArtGallery = () => {
+  const dispatch = useDispatch();
+  const galleryImages = useSelector((state) => state.portfolioGallery?.gallery);
+  console.log(galleryImages);
+
+  useEffect(() => {
+    dispatch(getFineArtGallery());
+  }, []);
+
   const itemData = [
     {
       img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
@@ -81,12 +92,18 @@ const FineArtGallery = () => {
             cols={5}
             rowHeight={164}
           >
-            {itemData.map((item) => (
-              <ImageListItem key={item.img}>
+            {itemData.map((item, index) => (
+              <ImageListItem key={index}>
+                {/* <img
+                  src={`http://localhost:8080/file/${item?.filename}`}
+                  srcSet={`http://localhost:8080/file/${item?.filename}`}
+                  // alt={item?._id}
+                  loading="lazy"
+                /> */}
                 <img
-                  src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                  srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
+                  src={`${item?.img}?w=164&h=164&fit=crop&auto=format`}
+                  srcSet={`${item?.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item?.title}
                   loading="lazy"
                 />
               </ImageListItem>
