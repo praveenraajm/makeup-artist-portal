@@ -1,8 +1,6 @@
-import { Home } from "@mui/icons-material";
 import { Box, Grid } from "@mui/material";
-import Footer from "pages/Footer/Footer";
 import Logo from "pages/Home/Logo";
-import background from "../../assets/bridal_trim_landscape.jpg";
+import background from "../../assets/bridal.jpg";
 import AboutDescription from "./AboutDescription";
 
 const About = () => {
@@ -21,10 +19,15 @@ const About = () => {
           </Grid>
         </Grid>
         <Grid item xs={6}>
-          <img src={background} alt="make-over" className="responsive"></img>
+          <img
+            src={background}
+            alt="make-over"
+            height="1000px"
+            width="100%"
+            style={{ objectFit: "cover" }}
+          ></img>
         </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 };

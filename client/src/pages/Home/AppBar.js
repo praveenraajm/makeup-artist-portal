@@ -3,14 +3,13 @@ import Home from "./Home";
 import Logo from "./Logo";
 import MakeOverTypes from "pages/MakeOverTypes/MakeOverTypes";
 import PortfolioHome from "pages/Portfolio/PortfolioHome";
-import Footer from "pages/Footer/Footer";
-import background from "../../assets/bridal_trim_landscape.jpg";
+import background from "../../assets/bridal.jpg";
 import Testimonials from "pages/Testimonials/Testimonials";
 
 const AppBar = () => {
   return (
     <div>
-      <Grid container>
+      <Grid container /* sx={{ height: "100px" }} */>
         <Grid item xs={6} sx={{ backgroundColor: "#ffebeb" }}>
           <Logo />
           <Grid container>
@@ -23,13 +22,19 @@ const AppBar = () => {
           </Grid>
         </Grid>
         <Grid item xs={6}>
-          <img src={background} alt="make-over" className="responsive"></img>
+          <img
+            src={background}
+            alt="make-over"
+            // className="responsive"
+            height="1000px"
+            width="100%"
+            style={{ objectFit: "cover" }}
+          ></img>
         </Grid>
       </Grid>
       <MakeOverTypes />
       <PortfolioHome />
       <Testimonials />
-      <Footer />
     </div>
   );
 };

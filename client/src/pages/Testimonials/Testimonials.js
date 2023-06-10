@@ -95,7 +95,7 @@ const Testimonials = () => {
         >
           TESTIMONIALS
         </Typography>
-        <Carousel sx={{ width: "90%", margin: "0 auto" }}>
+        <Carousel sx={{ width: "90%", margin: "0 auto" }} stopAutoPlayOnHover>
           {testimonials.map((item, index) => {
             return (
               <Item

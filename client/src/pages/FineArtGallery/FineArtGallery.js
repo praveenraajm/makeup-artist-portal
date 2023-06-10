@@ -1,6 +1,5 @@
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import { getFineArtGallery } from "actions/portfolioGallery";
-import Footer from "pages/Footer/Footer";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -111,7 +110,7 @@ const FineArtGallery = () => {
           </ImageList>
         </Box>
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

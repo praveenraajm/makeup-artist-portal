@@ -34,7 +34,7 @@ const Home = () => {
             width: "60%",
             borderRadius: "100px",
             padding: "8px 16px",
-            marginBottom: "16px",
+            margin: "16px",
             "&:hover": {
               backgroundColor: "#7d5851c2",
             },
