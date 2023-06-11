@@ -32,6 +32,14 @@ const Portfolio = () => {
         <Grid item xs={6}>
           <Carousel /* sx={{ width: "90%", margin: "0 auto" }} */
             stopAutoPlayOnHover
+            animation="fade"
+            indicatorContainerProps={{
+              style: {
+                marginTop: "0px", // 5
+                textAlign: "center", // 4
+                position: "absolute",
+              },
+            }}
             // indicatorIconButtonProps={{
             //   style: {
             //     padding: "2px", // 1
@@ -46,14 +54,16 @@ const Portfolio = () => {
           >
             {portfolioImages.map((item, index) => {
               return (
-                <img
-                  key={index}
-                  name={`Image-${index}`}
-                  src={item?.src}
-                  height="1000px"
-                  width="100%"
-                  style={{ objectFit: "cover" }}
-                />
+                <Box>
+                  <img
+                    key={index}
+                    name={`Image-${index}`}
+                    src={item?.src}
+                    height="1000px"
+                    width="100%"
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
               );
             })}
           </Carousel>

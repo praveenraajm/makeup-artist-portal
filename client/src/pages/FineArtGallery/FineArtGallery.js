@@ -2,64 +2,66 @@ import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import { getFineArtGallery } from "actions/portfolioGallery";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import imageOne from "../../assets/CharmMakeover/Image_One.jpg";
+import imageTwo from "../../assets/CharmMakeover/Image_Two.jpg";
+import imageThree from "../../assets/CharmMakeover/Image_Three.jpg";
+import imageFour from "../../assets/CharmMakeover/Image_Four.jpg";
+import imageFive from "../../assets/CharmMakeover/Image_Five.jpg";
+import imageSix from "../../assets/CharmMakeover/Image_Six.jpg";
+import imageSeven from "../../assets/CharmMakeover/Image_Seven.jpg";
+import imageEight from "../../assets/CharmMakeover/Image_Eight.jpg";
+import imageNine from "../../assets/CharmMakeover/Image_Nine.jpg";
+import imageBasic from "../../assets/bridal.jpg";
 
 const FineArtGallery = () => {
   const dispatch = useDispatch();
-  const galleryImages = useSelector((state) => state.portfolioGallery?.gallery);
-  console.log(galleryImages);
+  // const galleryImages = useSelector((state) => state.portfolioGallery?.gallery);
+  // console.log(galleryImages);
 
-  useEffect(() => {
-    dispatch(getFineArtGallery());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getFineArtGallery());
+  // }, []);
 
-  const itemData = [
+  const galleryImages = [
     {
-      img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-      title: "Breakfast",
+      img: imageBasic,
+      title: "imageBasic",
     },
     {
-      img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-      title: "Burger",
+      img: imageOne,
+      title: "imageOne",
     },
     {
-      img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-      title: "Camera",
+      img: imageTwo,
+      title: "imageTwo",
     },
     {
-      img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-      title: "Coffee",
+      img: imageThree,
+      title: "imageThree",
     },
     {
-      img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-      title: "Hats",
+      img: imageFour,
+      title: "imageFour",
     },
     {
-      img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-      title: "Honey",
+      img: imageFive,
+      title: "imageFive",
     },
     {
-      img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-      title: "Basketball",
+      img: imageSix,
+      title: "imageSix",
     },
     {
-      img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-      title: "Fern",
+      img: imageSeven,
+      title: "imageSeven",
     },
     {
-      img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-      title: "Mushrooms",
+      img: imageEight,
+      title: "imageEight",
     },
     {
-      img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-      title: "Tomato basil",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-      title: "Sea star",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-      title: "Bike",
+      img: imageNine,
+      title: "imageNine",
     },
   ];
 
@@ -70,7 +72,6 @@ const FineArtGallery = () => {
           sx={{
             width: "75%",
             margin: "0 auto",
-            height: "450px",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
@@ -86,12 +87,8 @@ const FineArtGallery = () => {
           >
             BRIDAL
           </Typography>
-          <ImageList
-            sx={{ width: "80%", height: "auto" }}
-            cols={5}
-            rowHeight={164}
-          >
-            {itemData.map((item, index) => (
+          <ImageList sx={{ width: "100%", height: "100%" }} cols={3} row="auto">
+            {galleryImages.map((item, index) => (
               <ImageListItem key={index}>
                 {/* <img
                   src={`http://localhost:8080/file/${item?.filename}`}
@@ -100,8 +97,8 @@ const FineArtGallery = () => {
                   loading="lazy"
                 /> */}
                 <img
-                  src={`${item?.img}?w=164&h=164&fit=crop&auto=format`}
-                  srcSet={`${item?.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item?.img}?w=164&h=164&fit=cover&auto=format`}
+                  srcSet={`${item?.img}?w=164&h=164&fit=cover&auto=format&dpr=2 2x`}
                   alt={item?.title}
                   loading="lazy"
                 />
@@ -110,7 +107,6 @@ const FineArtGallery = () => {
           </ImageList>
         </Box>
       </Box>
-      {/* <Footer /> */}
     </div>
   );
 };

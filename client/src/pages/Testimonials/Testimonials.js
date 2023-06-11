@@ -12,7 +12,7 @@ const Item = (props) => {
           fontWeight: "400",
           display: "flex",
           justifyContent: "center",
-          color: "#000",
+          color: "#fff",
           margin: "8px",
           textAlign: "center",
         }}
@@ -85,7 +85,7 @@ const Testimonials = () => {
         <Typography
           variant="h3"
           sx={{
-            color: "#fff",
+            color: "#000",
             marginTop: "8px",
             fontWeight: "500",
             fontStyle: "italic",
