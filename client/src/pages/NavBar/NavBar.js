@@ -2,70 +2,49 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry, faFaceFlushed } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { navItems } from "./constants";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
-  const navItems = [
-    {
-      label: "Home",
-      to: "/",
-    },
-    {
-      label: "About",
-      to: "#/about",
-    },
-    {
-      label: "Portfolio",
-      to: "#/portfolio",
-    },
-    {
-      label: "Classes",
-      to: "#/classes",
-    },
-    {
-      label: "Contacts",
-      to: "#/contacts",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faFacebook} size="lg" />,
-      to: "https://www.facebook.com/profile.php?id=100090175178959",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faInstagram} size="lg" />,
-      to: "https://www.instagram.com/charm_makeover/",
-    },
-  ];
-
+  const navigate = useNavigate();
   return (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          minHeight: 50,
-          backgroundColor: "#4a1e1ee0",
-        }}
-      >
-        {navItems.map((item) => (
-          <Link
-            key={item}
-            sx={{
-              color: "#fff",
-              fontWeight: 600,
-              fontSize: "14px",
-              padding: "16px 18px",
-              cursor: "pointer",
-            }}
-            underline="none"
-            onClick={() => console.log("clicked")}
-            href={item?.to}
-          >
-            {item?.label}
-            {item?.icon}
-          </Link>
-        ))}
-      </Box>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        minHeight: 50,
+        // backgroundColor: "#4a1e1ee0",
+        position: "absolute",
+        top: "0",
+        left: "50%",
+        width: "50%",
+        padding: "10px 40px",
+        minWidth: "384px",
+        flexWrap: "wrap",
+      }}
+    >
+      {navItems.map((item) => (
+        <Link
+          key={item}
+          sx={{
+            color: "#fff",
+            fontWeight: 600,
+            fontSize: "16px",
+            padding: "16px 18px",
+            cursor: "pointer",
+            minWidth: "20px",
+            textAlign: "center",
+          }}
+          underline="none"
+          onClick={() => navigate(item?.to)}
+          // href={item?.to}
+        >
+          {item?.label}
+          {item?.icon}
+        </Link>
+      ))}
     </Box>
   );
 };

@@ -5,17 +5,25 @@ import MakeOverTypes from "pages/MakeOverTypes/MakeOverTypes";
 import PortfolioHome from "pages/Portfolio/PortfolioHome";
 import background from "../../assets/bridal.jpg";
 import Testimonials from "pages/Testimonials/Testimonials";
+import NavBar from "pages/NavBar/NavBar";
 
 const AppBar = () => {
   return (
-    <div>
-      <Grid container /* sx={{ height: "100px" }} */>
+    <div style={{ minWidth: "768px" }}>
+      <Grid container>
         <Grid item xs={6} sx={{ backgroundColor: "#ffebeb" }}>
-          <Logo />
           <Grid container>
-            <Grid item xs={5}></Grid>
-            <Grid item xs={7}>
-              <Box sx={{ height: "400" }}>
+            <Grid item xs={2}></Grid>
+            <Grid item xs={10}>
+              <Box
+                sx={{
+                  height: "400",
+                  display: "flex",
+                  flexDirection: "column",
+                  paddingRight: "50px",
+                }}
+              >
+                <Logo />
                 <Home />
               </Box>
             </Grid>

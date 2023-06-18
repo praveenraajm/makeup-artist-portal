@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <div>
       <Box sx={logoAlignStyle}>
-        <img src={black_logo} alt="charm_makeover_logo" height="100px"></img>
+        <img src={black_logo} alt="charm_makeover_logo" height="150px"></img>
       </Box>
     </div>
   );

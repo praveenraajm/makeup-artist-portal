@@ -1,4 +1,4 @@
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -21,7 +21,21 @@ const FineArtGallery = lazy(() =>
 
 export default function Router() {
   return (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense
+      fallback={
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            height: "100%",
+            width: "100%",
+            alignItems: "center",
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      }
+    >
       <Routes>
         <Route path="/" exact Component={AppBar} />
         <Route path="/about" exact Component={About} />

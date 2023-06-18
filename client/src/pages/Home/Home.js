@@ -15,10 +15,13 @@ const Home = () => {
         luctus felis. Cras ut lectus ac dolor consectetur venenatis at ut
         tortor. Fusce tempor, lectus ac luctus blandit, risus nisi eleifend
         purus, eget feugiat nulla quam at elit. Morbi rutrum euismod sem, eu
-        lobortis urna feugiat a. In hac habitasse platea dictumst. Duis ultrices
-        sed ante vel auctor. Nam vulputate leo libero, efficitur tincidunt velit
-        porttitor posuere. Duis in consectetur diam. In odio tellus, dapibus nec
-        dolor vestibulum, congue auctor lacus.
+        lobortis urna feugiat a.
+      </Typography>
+      <Typography variant="body1" paragraph>
+        In hac habitasse platea dictumst. Duis ultrices sed ante vel auctor. Nam
+        vulputate leo libero, efficitur tincidunt velit porttitor posuere. Duis
+        in consectetur diam. In odio tellus, dapibus nec dolor vestibulum,
+        congue auctor lacus.
       </Typography>
       <Box
         sx={{

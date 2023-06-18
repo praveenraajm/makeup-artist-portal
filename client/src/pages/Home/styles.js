@@ -1,7 +1,7 @@
 export const logoAlignStyle = () => {
   return {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "felx-start",
     marginTop: "32px",
   };
 };

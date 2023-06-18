@@ -1,10 +1,9 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Logo from "pages/Home/Logo";
 import Carousel from "react-material-ui-carousel";
 import PortfolioDescription from "./PortfolioDescription";
 import portfolioImageOne from "../../assets/CharmMakeover/Image_One.jpg";
 import portfolioImageTwo from "../../assets/bridal.jpg";
-import { NavigateNext } from "@mui/icons-material";
 
 const Portfolio = () => {
   const portfolioImages = [
@@ -19,11 +18,18 @@ const Portfolio = () => {
     <div>
       <Grid container>
         <Grid item xs={6} sx={{ backgroundColor: "#ddc5c5" }}>
-          <Logo />
           <Grid container>
             <Grid item xs={5}></Grid>
             <Grid item xs={7}>
-              <Box sx={{ height: "400" }}>
+              <Box
+                sx={{
+                  height: "400",
+                  display: "flex",
+                  flexDirection: "column",
+                  paddingRight: "50px",
+                }}
+              >
+                <Logo />
                 <PortfolioDescription />
               </Box>
             </Grid>
